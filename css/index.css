@@ -1,0 +1,98 @@
+html,body,div,img,span,ul,li{
+	margin: 0px;
+	padding: 0px;
+}
+ul,li{
+	list-style: none;
+}
+.box{
+	width: 1000px;
+	height: 700px;
+	margin:0 auto;
+	background: #000;
+	position: relative;
+}
+.start,.end{
+	width: 120px;
+	height: 40px;
+	line-height:40px;
+	text-align: center;
+	color: #fff;
+	font-size:22px;
+	border:1px solid #fff;
+	position: absolute;
+	top: 50%;
+	margin-top: -20px;
+	left: 50%;
+	margin-left: -60px;
+}
+.score,.scoretext{
+	position: absolute;
+	left: 0;
+	top: 0;
+	color: #fff;
+	font-size: 22px;
+}
+.tips{
+	position: absolute;
+	left: 18%;
+	top: 0;
+	color: #fff;
+	font-size: 22px;
+}
+.honeycomb{
+	/*margin: 0 auto;*/
+	position: relative;
+	top: 40px;
+}
+.enemy1,.enemy2,.enemy3,.enemy4{
+	height: 40px;
+	width: 40px;
+	box-sizing: border-box;
+	/* border: 1px solid #fff; */
+	float: left;
+	border-radius: 20px;
+}
+.enemy1{
+	background:rgba(0, 38, 255, 0.562) url(../img/timg.gif) no-repeat;
+	background-size: 40px 40px;
+}
+.enemy2{
+	background: rgba(255, 0, 128, 0.507) url(../img/timg.gif) no-repeat;
+	background-size: 40px 40px;
+}
+.enemy3{
+	background:rgba(0, 247, 255, 0.562) url(../img/timg.gif) no-repeat;
+	background-size: 40px 40px;
+}
+.enemy4{
+	background:rgba(0, 255, 64, 0.562) url(../img/timg.gif) no-repeat;
+	background-size: 40px 40px;
+}
+/* .enemy1{
+	background:rgba(0, 38, 255, 0.562);
+}
+.enemy2{
+	background: rgba(255, 0, 128, 0.507);
+}
+.enemy3{
+	background:rgba(0, 247, 255, 0.562);
+} */
+.air{
+	width: 60px;
+	height: 80px;
+	line-height: 80px;
+	background: deeppink;
+	position: absolute;
+	text-align: center;
+	line-break: 80px;
+	font-size: 22px;
+	color: #fff;
+}
+.bullet{
+	width: 4px;
+	height: 16px;
+	position: absolute;
+	background: #fff;
+	box-shadow: 0px 0px 5px 4px #1E90FF;
+}

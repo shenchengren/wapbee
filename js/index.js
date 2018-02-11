@@ -27,22 +27,22 @@ var Game = {
 			style: "enemy3",
 			hp: "3",
 			score: "10",
-			scorePlus: 10,
+			scorePlus: 8,
 			speed: 8
 		},
 		em4: {
 			style: "enemy4",
-			hp: "7",
-			score: "20",
-			scorePlus: 15,
-			speed: 16
+			hp: "6",
+			score: "18",
+			scorePlus: 12,
+			speed: 10
 		},
 		em5: {
 			style: "enemy5",
-			hp: "15",
+			hp: "10",
 			score: "20",
 			scorePlus: 15,
-			speed: 18
+			speed: 12
 		}
 	},
 	checkpoint: [{ //创建数据
@@ -50,49 +50,56 @@ var Game = {
 		iNum: 10,
 		speedX: 5,
 		speedY: 5,
-		timer: 5000
+		timer: 5000,
+		lottery:[20,20,10,50]//彩蛋比例--柱子，血量，子弹，空
 	},
 	{
 		data: ["em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1"],
 		iNum: 10,
 		speedX: 7,
 		speedY: 10,
-		timer: 4000
+		timer: 4000,
+		lottery:[20,40,10,30]//彩蛋比例--柱子，血量，子弹，空
 	},
 	{
 		data: ["em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1"],
 		iNum: 10,
 		speedX: 10,
 		speedY: 20,
-		timer: 3000
+		timer: 3000,
+		lottery:[20,40,10,30]//彩蛋比例--柱子，血量，子弹，空
 	},
 	{
 		data: ["em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1"],
 		iNum: 10,
 		speedX: 15,
 		speedY: 25,
-		timer: 2500
+		timer: 2500,
+		lottery:[20,40,10,30]//彩蛋比例--柱子，血量，子弹，空
 	},
 	{
 		data: ["em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em1"],
 		iNum: 10,
 		speedX: 25,
 		speedY: 40,
-		timer: 2000
+		timer: 2000,
+		lottery:[20,40,10,30]//彩蛋比例--柱子，血量，子弹，空
 	},
 	{
 		data: ["em4","em4","em4","em4","em4","em4","em4","em4","em4","em4","em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3","em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3","em3", "em3","em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2"],
 		iNum: 10,
 		speedX: 25,
 		speedY: 40,
-		timer: 1500
+		timer: 1500,
+		lottery:[20,40,10,30]//彩蛋比例--柱子，血量，子弹，空
 	},
 	{
 		data: ["em4","em4","em4","em4","em4","em4","em4","em4","em4","em4","em3", "em4", "em5", "em4", "em5", "em4", "em5", "em4", "em5", "em4", "em5", "em4", "em5", "em4", "em5", "em4", "em5", "em4", "em5", "em4", "em5", "em5", "em5", "em5", "em5", "em5", "em5", "em5", "em5", "em5", "em5", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3","em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3","em3", "em3","em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2"],
 		iNum: 10,
 		speedX: 25,
 		speedY: 40,
-		timer: 1500
+		timer: 1500,
+		lottery:[20,40,10,30]//彩蛋比例--柱子，血量，子弹，空
 	}
 	],
 	airData: { //飞机数据
@@ -104,13 +111,7 @@ var Game = {
 			hp: 1
 		}
 	},
-	tipsData: [
-		"左右移动 ← →，",
-		"空格 开枪，",
-		"强化生命（100）：↑，",
-		"强化飞机（300）：↓"
-	],
-	level: 6,
+	level: 0,
 	maxLevel: 5,
 	init: function () { //初始化数据
 		this.createScore();
@@ -129,6 +130,134 @@ var Game = {
 		oBox.appendChild(oDiv);
 		var oSore = oDiv.getElementsByTagName("span")[0];
 		this.oSore = oSore;
+	},
+	createLottery:function(checkpoint){//创建彩蛋
+		var that =this;
+		var fanwei = 0;
+		var lotteryRd = 0;
+		this.lotteryArr = [];
+		var oDiv = document.createElement("div");
+		oDiv.className = "lottery"
+
+		this.oUl.lotteryTimer = null;
+		this.oUl.lotteryTimer = setTimeout(function(){
+			var oDiv = document.createElement("div");
+			oDiv.className = "lottery"
+
+			var rd = Math.ceil(Math.random() * 100);
+			lotteryRd = Math.ceil(Math.random() * 100)
+			if(rd <= checkpoint.lottery[0]){
+				oDiv.innerText = "墙";
+				
+				that.oBox.appendChild(oDiv);
+				fanwei = (that.oBox.offsetWidth - oDiv.offsetWidth)/that.oBox.offsetWidth * 100;
+				lotteryRd = Math.ceil(Math.random() * fanwei)
+				oDiv.style.left = lotteryRd + "%";
+				oDiv.style.top = 0;
+				oDiv.timer = null;
+				oDiv.timer = setInterval(function(){
+					oDiv.style.top = oDiv.offsetTop + 8 +"px";
+					if(that.collision1(oDiv,that.oAir)){
+						if (that.oAir.innerText == 1) {
+							clearInterval(that.oUl.rdTiemr);
+							clearInterval(that.oUl.timer);
+							document.getElementsByClassName("end")[0].innerText = "游戏失败";
+							document.getElementsByClassName("end")[0].style.display = "block";
+							setTimeout(function () {
+								window.location.reload();
+							}, 2000)
+						} else {
+							that.oAir.innerText--;
+							clearInterval(oDiv.timer);
+							that.oBox.removeChild(oDiv);
+						}
+					}
+					if(oDiv.offsetTop >= that.oBox.offsetHeight){
+						clearInterval(oDiv.timer);
+						that.oBox.removeChild(oDiv);
+					}
+				},80)
+				
+				
+			}else if(rd <= (checkpoint.lottery[0] + checkpoint.lottery[1])){
+				oDiv.innerText = "血";
+				that.oBox.appendChild(oDiv);
+				fanwei = (that.oBox.offsetWidth - oDiv.offsetWidth)/that.oBox.offsetWidth * 100;
+				lotteryRd = Math.ceil(Math.random() * fanwei)
+				oDiv.style.left = lotteryRd + "%";
+				oDiv.style.top = 0;
+				oDiv.timer = null;
+				oDiv.timer = setInterval(function(){
+					oDiv.style.top = oDiv.offsetTop + 8 +"px";
+					if(that.collision1(oDiv,that.oAir)){
+						that.oAir.innerText++
+						clearInterval(oDiv.timer);
+						that.oBox.removeChild(oDiv);
+					}
+					if(oDiv.offsetTop >= that.oBox.offsetHeight){
+						clearInterval(oDiv.timer);
+						that.oBox.removeChild(oDiv);
+					}
+				},80)
+				
+				
+			}else if(rd <= (checkpoint.lottery[0] + checkpoint.lottery[1] + checkpoint.lottery[2])){
+				oDiv.innerText = "弹";
+				that.oBox.appendChild(oDiv);
+				fanwei = (that.oBox.offsetWidth - oDiv.offsetWidth)/that.oBox.offsetWidth * 100;
+				lotteryRd = Math.ceil(Math.random() * fanwei)
+				oDiv.style.left = lotteryRd + "%";
+				oDiv.style.top = 0;
+				oDiv.timer = null;
+				oDiv.timer = setInterval(function(){
+					oDiv.style.top = oDiv.offsetTop + 8 +"px";
+					if(that.collision1(oDiv,that.oAir)){
+						
+						that.oAir.bulletNum++
+						clearInterval(oDiv.timer);
+						that.oBox.removeChild(oDiv);
+						
+					}
+					if(oDiv.offsetTop >= that.oBox.offsetHeight){
+						clearInterval(oDiv.timer);
+						that.oBox.removeChild(oDiv);
+					}
+				},80)
+			
+				
+			}else if(rd <= (checkpoint.lottery[0] + checkpoint.lottery[1] + checkpoint.lottery[2] + checkpoint.lottery[3])){
+				console.log("空")
+				
+			}
+			// console.log(that.oUl)
+			// console.log(that.oUl.lotteryTime)
+			// that.oUl.lotteryTimer()
+		},5000)
+
+
+
+		// for(var i = 0 ; i<20; i++){
+		// 	var rd = Math.ceil(Math.random() * 100);
+		// 	if(rd <= checkpoint.lottery[0]){
+		// 		this.lotteryArr.push("墙");
+		// 	}else if(rd <= (checkpoint.lottery[0] + checkpoint.lottery[1])){
+		// 		this.lotteryArr.push("血");
+		// 	}else if(rd <= (checkpoint.lottery[0] + checkpoint.lottery[1] + checkpoint.lottery[2])){
+		// 		this.lotteryArr.push("弹");
+		// 	}else if(rd <= (checkpoint.lottery[0] + checkpoint.lottery[1] + checkpoint.lottery[2] + checkpoint.lottery[3])){
+		// 		this.lotteryArr.push("空");
+		// 	}
+		// }
+		// console.log(this.lotteryArr)
+
+
+		// this.oUl.lotteryTimer = null;
+		// this.oUl.lotteryTimer = setTimeout(function(){
+		// 	var oDiv = document.createElement("div");
+		// 	oDiv.className = "lottery"
+		// 	var indexRd = Math.floor(Math.random() * 20);
+		// 	that.lotteryArr[indexRd]
+		// },5000)
 	},
 	createEnemy: function (checkpoint) { //创建敌人
 		var data = checkpoint.data;
@@ -153,18 +282,21 @@ var Game = {
 		}
 		var oLi = oUl.getElementsByTagName("li");
 		this.oLi = oLi;
-		for (var j = 0; j < oLi.length; j++) {
+		for (var j = 0; j < oLi.length; j++) {//把浮动布局转换成定位布局
 			arr.push([oLi[j].offsetLeft, oLi[j].offsetTop])
 		}
-		for (var k = 0; k < oLi.length; k++) {
+		for (var k = 0; k < oLi.length; k++) {//把浮动布局转换成定位布局
 			oLi[k].style.position = "absolute";
 			oLi[k].style.left = arr[k][0] + "px";
 			oLi[k].style.top = arr[k][1] + "px";
 		}
-		this.enemyMove(checkpoint);
-		this.oUl.rdTiemr = setInterval(function () {
+		this.enemyMove(checkpoint);//敌人移动
+		this.oUl.rdTiemr = setInterval(function () {//敌人自由落体
 			that.random();
 		}, checkpoint.timer)
+
+		// 创建彩蛋
+		this.createLottery(checkpoint);
 
 	},
 	enemyMove: function (checkpoint) { //敌人移动
@@ -301,21 +433,7 @@ var Game = {
 					}
 					clearInterval(oB.timer);
 					that.oBox.removeChild(oB);
-					if (that.oLi.length == 0) {
-						if (that.level == that.maxLevel) {
-							clearInterval(that.oUl.rdTiemr);
-							clearInterval(that.oUl.timer);
-							that.oBox.removeChild(that.oUl);
-							document.getElementsByClassName("end")[0].style.display = "block";
-
-						} else {
-							clearInterval(that.oUl.rdTiemr);
-							clearInterval(that.oUl.timer);
-							that.oBox.removeChild(that.oUl);
-							that.createEnemy(that.checkpoint[that.level]);
-							that.level++;
-						}
-					}
+					that.nextCheckpoint();
 				}
 			}
 		}
@@ -340,32 +458,43 @@ var Game = {
 					clearInterval(that.oUl.timer);
 					document.getElementsByClassName("end")[0].innerText = "游戏失败";
 					document.getElementsByClassName("end")[0].style.display = "block";
+					clearInterval(that.oAir.blTimer);
+					
+					that.oBox.removeChild(that.oAir);
+					clearInterval(nowLi.timer);
+					that.oAir = null;
+					that.oUl.removeChild(nowLi);
 					setTimeout(function () {
 						window.location.reload();
 					}, 2000)
 				} else {
 					clearInterval(nowLi.timer);
 					that.oUl.removeChild(nowLi);
+					nowLi = null ;
 					that.oAir.innerText--;
-					if (that.oLi.length == 0) {
-						if (that.level == that.maxLevel) {
-							clearInterval(that.oUl.rdTiemr);
-							clearInterval(that.oUl.timer);
-							that.oBox.removeChild(that.oUl);
-							document.getElementsByClassName("end")[0].style.display = "block";
-
-						} else {
-							clearInterval(that.oUl.rdTiemr);
-							clearInterval(that.oUl.timer);
-							that.oBox.removeChild(that.oUl);
-							that.createEnemy(that.checkpoint[that.level]);
-							that.level++;
-						}
-					}
+					that.nextCheckpoint();
 				}
 			}
 		}, 2000/60)
 
+	},
+	nextCheckpoint:function(){
+		if (this.oLi.length == 0) {
+			if (this.level == this.maxLevel) {
+				clearInterval(this.oUl.rdTiemr);
+				clearInterval(this.oUl.timer);
+				this.oBox.removeChild(this.oUl);
+				document.getElementsByClassName("end")[0].style.display = "block";
+				clearInterval(this.oAir.blTimer);
+				this.oBox.removeChild(this.oAir);
+			} else {
+				clearInterval(this.oUl.rdTiemr);
+				clearInterval(this.oUl.timer);
+				this.oBox.removeChild(this.oUl);
+				this.createEnemy(this.checkpoint[this.level]);
+				this.level++;
+			}
+		}
 	},
 	collision: function (obj1, obj2) { //检测碰撞
 		var L1 = obj1.offsetLeft;
@@ -377,6 +506,25 @@ var Game = {
 		var R2 = obj2.offsetLeft + this.oUl.offsetLeft + obj2.offsetWidth;
 		var T2 = obj2.offsetTop + this.oUl.offsetTop;
 		var B2 = obj2.offsetTop + this.oUl.offsetTop + obj2.offsetHeight;
+		if (L1 > R2 || R1 < L2 || T1 > B2 || B1 < T2) {
+			return false
+		} else {
+			return true
+		}
+	},
+	collision1:function(obj1, obj2){
+		if(obj1==null||obj2==null){
+			return;
+		}
+		var L1 = obj1.offsetLeft;
+		var R1 = obj1.offsetLeft + obj1.offsetWidth;
+		var T1 = obj1.offsetTop;
+		var B1 = obj1.offsetTop + obj1.offsetHeight;
+
+		var L2 = obj2.offsetLeft;
+		var R2 = obj2.offsetLeft + obj2.offsetWidth;
+		var T2 = obj2.offsetTop
+		var B2 = obj2.offsetTop + obj2.offsetHeight;
 		if (L1 > R2 || R1 < L2 || T1 > B2 || B1 < T2) {
 			return false
 		} else {

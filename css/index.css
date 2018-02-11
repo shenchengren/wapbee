@@ -21,6 +21,7 @@ ul,li{
 	left: 0px;
 	top: 0;
 	right: 0;
+	overflow: hidden;
 	bottom: 30%;
 	background: #000;
 }
@@ -104,12 +105,26 @@ ul,li{
 	font-size: 24px;
 	text-align: center;
 }
+.lottery{
+	height: 30px;
+	width: 30px;
+	line-height: 30px;
+	font-size: 26px;
+	text-align: center;
+	background: #fff;
+	color: rgb(255, 0, 0);
+	text-shadow:0px 0px 6px rgb(255, 255, 0);
+	box-shadow: 0px 0px 40px rgb(55, 255, 208);
+	position: absolute;
+	/* left: 20%;
+	top: 0% */
+}
 .honeycomb{
 	/*margin: 0 auto;*/
 	position: relative;
 	top: 24px;
 }
-.enemy1,.enemy2,.enemy3,.enemy4{
+.enemy1,.enemy2,.enemy3,.enemy4,.enemy5{
 	height: 20px;
 	width: 20px;
 	box-sizing: border-box;
@@ -118,19 +133,19 @@ ul,li{
 	border-radius: 10px;
 }
 .enemy1{
-	background:rgba(0, 38, 255, 0.562) url(../img/timg.gif) no-repeat;
+	background:rgba(217, 255, 0, 0.562) url(../img/timg.gif) no-repeat;
 	background-size: 20px 20px;
 }
 .enemy2{
-	background: rgba(255, 0, 128, 0.507) url(../img/timg.gif) no-repeat;
+	background: rgba(0, 255, 200, 0.507) url(../img/timg.gif) no-repeat;
 	background-size: 20px 20px;
 }
 .enemy3{
-	background:rgba(0, 247, 255, 0.562) url(../img/timg.gif) no-repeat;
+	background:rgba(0, 26, 255, 0.562) url(../img/timg.gif) no-repeat;
 	background-size: 20px 20px;
 }
 .enemy4{
-	background:rgba(0, 255, 64, 0.562) url(../img/timg.gif) no-repeat;
+	background:rgba(255, 0, 255, 0.562) url(../img/timg.gif) no-repeat;
 	background-size: 20px 20px;
 }
 .enemy5{

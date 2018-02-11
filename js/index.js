@@ -1,6 +1,8 @@
 window.onload = function () {
 	var start = document.getElementsByClassName("start")[0]
+	var tips = document.getElementsByClassName("tips")[0]
 	start.onclick = function () {
+		tips.style.display = "none";
 		this.style.display = "none";
 		Game.init() //游戏初始化
 	}
@@ -12,70 +14,91 @@ var Game = {
 			hp: "1",
 			score: "3",
 			scorePlus: 2,
-			speed: 10
+			speed: 2
 		},
 		em2: {
 			style: "enemy2",
 			hp: "2",
 			score: "5",
 			scorePlus: 5,
-			speed: 20
+			speed: 4
 		},
 		em3: {
 			style: "enemy3",
 			hp: "3",
 			score: "10",
 			scorePlus: 10,
-			speed: 30
+			speed: 8
 		},
 		em4: {
 			style: "enemy4",
-			hp: "5",
+			hp: "7",
 			score: "20",
 			scorePlus: 15,
-			speed: 35
+			speed: 16
+		},
+		em5: {
+			style: "enemy5",
+			hp: "15",
+			score: "20",
+			scorePlus: 15,
+			speed: 18
 		}
 	},
 	checkpoint: [{ //创建数据
 		data: ["em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1"],
 		iNum: 10,
-		speedX: 10,
-		speedY: 10,
-		timer: 2500
+		speedX: 5,
+		speedY: 5,
+		timer: 5000
 	},
 	{
 		data: ["em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1"],
 		iNum: 10,
-		speedX: 10,
+		speedX: 7,
 		speedY: 10,
-		timer: 2000
+		timer: 4000
 	},
 	{
 		data: ["em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1"],
 		iNum: 10,
 		speedX: 10,
 		speedY: 20,
-		timer: 1000
+		timer: 3000
 	},
 	{
 		data: ["em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1", "em1"],
 		iNum: 10,
-		speedX: 30,
-		speedY: 40,
-		timer: 800
+		speedX: 15,
+		speedY: 25,
+		timer: 2500
 	},
 	{
-		data: ["em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4","em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em1"],
+		data: ["em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em1"],
 		iNum: 10,
-		speedX: 40,
-		speedY: 60,
-		timer: 700
+		speedX: 25,
+		speedY: 40,
+		timer: 2000
+	},
+	{
+		data: ["em4","em4","em4","em4","em4","em4","em4","em4","em4","em4","em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em4", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3","em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3","em3", "em3","em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2"],
+		iNum: 10,
+		speedX: 25,
+		speedY: 40,
+		timer: 1500
+	},
+	{
+		data: ["em4","em4","em4","em4","em4","em4","em4","em4","em4","em4","em3", "em4", "em5", "em4", "em5", "em4", "em5", "em4", "em5", "em4", "em5", "em4", "em5", "em4", "em5", "em4", "em5", "em4", "em5", "em4", "em5", "em5", "em5", "em5", "em5", "em5", "em5", "em5", "em5", "em5", "em5", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3","em3", "em3", "em3", "em3", "em3", "em3", "em3", "em3","em3", "em3","em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2", "em2"],
+		iNum: 10,
+		speedX: 25,
+		speedY: 40,
+		timer: 1500
 	}
 	],
 	airData: { //飞机数据
 		air1: {
 			style: "air",
-			speed: 15,
+			speed: 5,
 			bullet: "bullet",
 			bulletNum: 1,
 			hp: 1
@@ -87,11 +110,11 @@ var Game = {
 		"强化生命（100）：↑，",
 		"强化飞机（300）：↓"
 	],
-	level: 0,
+	level: 6,
 	maxLevel: 5,
 	init: function () { //初始化数据
 		this.createScore();
-		this.createTips();
+		// this.createTips();
 		this.createEnemy(this.checkpoint[this.level]);
 		this.createAir();
 		this.maxLevel = this.checkpoint.length;//自动获取最高关卡数量
@@ -107,24 +130,13 @@ var Game = {
 		var oSore = oDiv.getElementsByTagName("span")[0];
 		this.oSore = oSore;
 	},
-	createTips: function () {//创建提示
-		var oDiv = document.createElement("div");
-		oDiv.className = "tips";
-		var temp = "";
-		this.tipsData.forEach(function (val, index) {
-			temp += val;
-		});
-		oDiv.innerText = temp;
-		this.oTips = oDiv;
-		this.oBox.appendChild(oDiv);
-	},
 	createEnemy: function (checkpoint) { //创建敌人
 		var data = checkpoint.data;
 		var arr = [];
 		var that = this;
 		document.title = this.level + 1;
 		var oUl = document.createElement("ul");
-		oUl.style.width = 40 * checkpoint.iNum + "px";
+		oUl.style.width = 20 * checkpoint.iNum + "px";
 		oUl.className = "honeycomb";
 		this.oUl = oUl;
 		this.oUl.rdTiemr = null;
@@ -160,7 +172,7 @@ var Game = {
 		that.oUl.timer = null;
 		var l = 0;
 		var r = this.oBox.offsetWidth - this.oUl.offsetWidth;
-		that.oUl.timer = setInterval(move, 200);
+		that.oUl.timer = setInterval(move, 1000);
 
 		function move() {
 			if (that.oUl.offsetLeft >= r) {
@@ -175,57 +187,62 @@ var Game = {
 		}
 	},
 	createAir: function () { //创建飞机
+		var that = this
 		var oAir = document.createElement("div");
 		oAir.className = this.airData.air1.style;
 		oAir.speed = this.airData.air1.speed;
 		oAir.hp = this.airData.air1.hp;
 		oAir.bulletNum = this.airData.air1.bulletNum;
 		oAir.innerText = oAir.hp;
+		oAir.blTimer = null;
 		this.oAir = oAir;
 		this.oBox.appendChild(oAir);
 		oAir.style.left = (this.oBox.offsetWidth - oAir.offsetWidth) / 2 + "px";
 		oAir.style.top = (this.oBox.offsetHeight - oAir.offsetHeight) + "px";
 		this.airMove();
+		oAir.blTimer = setInterval(function(){
+			for (var i = 0; i < that.oAir.bulletNum; i++) {//发射子弹
+				that.createBullet();
+			}
+		},400)
+		
 	},
 	airMove: function () { //飞机移动
 		var that = this;
 		this.oAir.timer = null;
 		var code = 0;
-
-		document.onkeydown = function (ev) {
+		var btn = document.getElementsByClassName("btn")[0];
+	
+		btn.ontouchstart = function (ev) {
 			if (!that.oAir.timer) {
-				that.oAir.timer = setInterval(move, 20);
+				that.oAir.timer = setInterval(move, 1000/60);
 			}
-			var ev = ev || window.event;
-			if (ev.keyCode == 37) {
+			// var ev = ev || window.event;
+			if (ev.target.className == "left") {
 				code = 1
-			} else if (ev.keyCode == 39) {
+			} else if (ev.target.className == "right") {
 				code = 2
 			}
 		}
-		document.onkeyup = function (ev) {
-			var ev = ev || window.event;
-			if (ev.keyCode == 37) {
+
+
+		btn.ontouchend = function (ev) {
+			if (ev.target.className == "left") {
 				clearInterval(that.oAir.timer);
 				code = 0;
 				that.oAir.timer = null;
-			} else if (ev.keyCode == 39) {
+			} else if (ev.target.className == "right") {
 				clearInterval(that.oAir.timer);
 				code = 0;
 				that.oAir.timer = null;
-			} else if (ev.keyCode == 38 && that.oSore.innerText >= 100) {//强化生命
+			} else if (ev.target.className == "hp" && that.oSore.innerText >= 100) {//强化生命
 				that.oSore.innerText -= 100;
 				that.oAir.innerText++;
-			} else if (ev.keyCode == 40 && that.oSore.innerText >= 300) {//强化子弹
+			} else if (ev.target.className == "bl" && that.oSore.innerText >= 300) {//强化子弹
 				that.oSore.innerText -= 300;
 				that.oAir.bulletNum++
-			} else if (ev.keyCode == 32) {
-				for (var i = 0; i < that.oAir.bulletNum; i++) {//发射子弹
-					that.createBullet();
-				}
 			}
 		}
-
 		function move() {
 			if (code == 1) {
 				if (that.oAir.offsetLeft >= 0) {
@@ -255,14 +272,14 @@ var Game = {
 	bulletMove: function (oB) { //子弹移动
 		var that = this;
 		oB.timer = null;
-		oB.timer = setInterval(move, 30);
+		oB.timer = setInterval(move, 2000/60);
 
 		function move() {
 			if (oB.offsetTop <= (that.oBox.offsetTop - oB.offsetHeight)) {
 				clearInterval(oB.timer);
 				that.oBox.removeChild(oB);
 			} else {
-				oB.style.top = oB.offsetTop - 10 + "px";
+				oB.style.top = oB.offsetTop - 20 + "px";
 			}
 			for (var i = 0; i < that.oLi.length; i++) {
 				if (that.collision(oB, that.oLi[i])) {
@@ -285,14 +302,12 @@ var Game = {
 					clearInterval(oB.timer);
 					that.oBox.removeChild(oB);
 					if (that.oLi.length == 0) {
-						console.log("level:"+that.level );
-						console.log("maxLevel:"+that.maxLevel );
 						if (that.level == that.maxLevel) {
 							clearInterval(that.oUl.rdTiemr);
 							clearInterval(that.oUl.timer);
 							that.oBox.removeChild(that.oUl);
 							document.getElementsByClassName("end")[0].style.display = "block";
-							
+
 						} else {
 							clearInterval(that.oUl.rdTiemr);
 							clearInterval(that.oUl.timer);
@@ -322,9 +337,12 @@ var Game = {
 			if (that.collision(that.oAir, nowLi)) {
 				if (that.oAir.innerText == 1) {
 					clearInterval(that.oUl.rdTiemr);
-							clearInterval(that.oUl.timer);
-					alert("游戏结束");
-					window.location.reload();
+					clearInterval(that.oUl.timer);
+					document.getElementsByClassName("end")[0].innerText = "游戏失败";
+					document.getElementsByClassName("end")[0].style.display = "block";
+					setTimeout(function () {
+						window.location.reload();
+					}, 2000)
 				} else {
 					clearInterval(nowLi.timer);
 					that.oUl.removeChild(nowLi);
@@ -335,7 +353,7 @@ var Game = {
 							clearInterval(that.oUl.timer);
 							that.oBox.removeChild(that.oUl);
 							document.getElementsByClassName("end")[0].style.display = "block";
-							
+
 						} else {
 							clearInterval(that.oUl.rdTiemr);
 							clearInterval(that.oUl.timer);
@@ -346,7 +364,7 @@ var Game = {
 					}
 				}
 			}
-		}, 80)
+		}, 2000/60)
 
 	},
 	collision: function (obj1, obj2) { //检测碰撞

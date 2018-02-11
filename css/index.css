@@ -1,73 +1,141 @@
-html,body,div,img,span,ul,li{
+html,body,div,img,span,ul,li,p{
 	margin: 0px;
 	padding: 0px;
+}
+*{   
+    -webkit-touch-callout:none;  /*系统默认菜单被禁用*/   
+    -webkit-user-select:none; /*webkit浏览器*/   
+    -khtml-user-select:none; /*早期浏览器*/   
+    -moz-user-select:none;/*火狐*/   
+    -ms-user-select:none; /*IE10*/   
+    user-select:none;   
+}  
+body{
+	/* position: relative; */
 }
 ul,li{
 	list-style: none;
 }
 .box{
-	width: 1000px;
-	height: 700px;
-	margin:0 auto;
+	position: absolute;
+	left: 0px;
+	top: 0;
+	right: 0;
+	bottom: 30%;
 	background: #000;
+}
+.btn{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 70%;
+	bottom: 0;
+	right: 0;
+}
+.btn p:first-child{
+	height: 40%;
 	position: relative;
 }
-.start,.end{
-	width: 120px;
-	height: 40px;
-	line-height:40px;
-	text-align: center;
-	color: #fff;
-	font-size:22px;
-	border:1px solid #fff;
+.btn p:last-child{
+	height: 60%;
+	position: relative;
+}
+.btn span{
+	display: inline-block;
 	position: absolute;
 	top: 50%;
-	margin-top: -20px;
+	margin-top: -25px;
+	height: 60px;
+	width: 60px;
+	line-height: 60px;
+	text-align: center;
+	color: #fff;
+	background: #f00;
+	border-radius: 50%;
+	font-size: 20px;
+}
+.btn .left{
+	left: 10%;
+	margin-top: -35px;
+	height: 80px;
+	width: 80px;
+	line-height: 80px;
+}
+.btn .right{
+	right: 10%;
+	margin-top: -35px;
+	height: 80px;
+	width: 80px;
+	line-height: 80px;
+}
+.btn .hp{
+	left: 30%;
+}
+.btn .bl{
+	right: 30%;
+}
+.start,.end{
+	width: 180px;
+	height: 60px;
+	line-height:60px;
+	border-radius: 30px;
+	text-align: center;
+	color: #fff;
+	font-size:25px;
+	border:1px solid #fff;
+	position: absolute;
+	top: 60%;
 	left: 50%;
-	margin-left: -60px;
+	margin-left: -90px;
 }
 .score,.scoretext{
 	position: absolute;
 	left: 0;
 	top: 0;
 	color: #fff;
-	font-size: 22px;
+	font-size: 18px;
 }
 .tips{
 	position: absolute;
-	left: 18%;
-	top: 0;
+	width: 80%;
+	left: 10%;
+	top: 15%;
 	color: #fff;
-	font-size: 22px;
+	font-size: 24px;
+	text-align: center;
 }
 .honeycomb{
 	/*margin: 0 auto;*/
 	position: relative;
-	top: 40px;
+	top: 24px;
 }
 .enemy1,.enemy2,.enemy3,.enemy4{
-	height: 40px;
-	width: 40px;
+	height: 20px;
+	width: 20px;
 	box-sizing: border-box;
 	/* border: 1px solid #fff; */
 	float: left;
-	border-radius: 20px;
+	border-radius: 10px;
 }
 .enemy1{
 	background:rgba(0, 38, 255, 0.562) url(../img/timg.gif) no-repeat;
-	background-size: 40px 40px;
+	background-size: 20px 20px;
 }
 .enemy2{
 	background: rgba(255, 0, 128, 0.507) url(../img/timg.gif) no-repeat;
-	background-size: 40px 40px;
+	background-size: 20px 20px;
 }
 .enemy3{
 	background:rgba(0, 247, 255, 0.562) url(../img/timg.gif) no-repeat;
-	background-size: 40px 40px;
+	background-size: 20px 20px;
 }
 .enemy4{
 	background:rgba(0, 255, 64, 0.562) url(../img/timg.gif) no-repeat;
-	background-size: 40px 40px;
+	background-size: 20px 20px;
+}
+.enemy5{
+	background:rgba(255, 0, 0, 0.562) url(../img/timg.gif) no-repeat;
+	background-size: 20px 20px;
 }
 /* .enemy1{
 	background:rgba(0, 38, 255, 0.562);
@@ -79,14 +147,14 @@ ul,li{
 	background:rgba(0, 247, 255, 0.562);
 } */
 .air{
-	width: 60px;
-	height: 80px;
-	line-height: 80px;
+	width: 30px;
+	height: 40px;
+	line-height: 40px;
 	background: deeppink;
 	position: absolute;
 	text-align: center;
-	line-break: 80px;
-	font-size: 22px;
+	line-break: 40px;
+	font-size: 16px;
 	color: #fff;
 }
 .bullet{

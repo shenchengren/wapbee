@@ -4,6 +4,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 		<title>beeGame</title>
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
 	</head>
@@ -11,8 +12,24 @@
 	<body>
 		<div class="box">
 			<!-- <div class="tips">[强化生命（100）：D][强化飞机（300）：F]</div> -->
+			<div class="tips">
+				<p>扣除积分100可加血量</p>
+				<p>扣除积分300强化子弹</p>
+				<p>血量-->一次不死</p>
+				<p>子弹-->一次发2发子弹</p>
+			</div>
 			<div class="start">开始游戏</div>
 			<div class="end" style="display: none;">游戏通关</div>
+		</div>
+		<div class="btn">
+			<p>
+				<span class="hp">血量</span>
+				<span class="bl">子弹</span>
+			</p>
+			<p>
+				<span class="left">向左</span>
+				<span class="right">向右</span>
+			</p>
 		</div>
 		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
 	</body>
